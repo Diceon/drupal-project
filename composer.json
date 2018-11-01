@@ -13,6 +13,18 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wodby/docker4drupal",
+                "version": "master",
+                "source": {
+                  "url": "https://github.com/wodby/docker4drupal.git",
+                  "type": "git",
+                  "reference": "master"
+                }
+            }
         }
     ],
     "require": {
@@ -27,7 +39,8 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.6.0"
+        "webflo/drupal-core-require-dev": "^8.6.0",
+        "wodby/docker4drupal": "master"
     },
     "conflict": {
         "drupal/drupal": "*"
