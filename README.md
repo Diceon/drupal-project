@@ -20,7 +20,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stability dev --no-interaction
+composer create-project irmantasp/drupal-project:^8 some-dir --repository-url=https://repository-irmantasp.herokuapp.com --no-interaction
 ```
 
 With `composer require ...` you can download new dependencies to your 
@@ -47,6 +47,7 @@ When installing the given `composer.json` some tasks are taken care of:
 * Profiles (packages of type `drupal-profile`) will be placed in `web/profiles/contrib/`
 * Creates default writable versions of `settings.php` and `services.yml`.
 * Creates `web/sites/default/files`-directory.
+* Installs Docker development environment by `wodby/docker4drupal` and places initial files inside project.
 * Latest version of drush is installed locally for use at `vendor/bin/drush`.
 * Latest version of DrupalConsole is installed locally for use at `vendor/bin/drupal`.
 * Creates environment variables based on your .env file. See [.env.example](.env.example).
