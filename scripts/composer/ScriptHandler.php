@@ -71,6 +71,72 @@ class ScriptHandler {
     }
   }
 
+  public static function createRequiredDockerFiles(Event $event) {
+    $fs = new Filesystem();
+    $drupalFinder = new DrupalFinder();
+    $drupalFinder->locateRoot(getcwd());
+    $projectRoot = $drupalFinder->getComposerRoot();
+    $vendorRoot = $drupalFinder->getVendorDir();
+
+    $dockerDirs = [
+      'docker'
+    ];
+
+    foreach ($dockerDirs as $dir) {
+      if(!$fs->exists($projectRoot . '/' . $dir)) {
+        $fs->mkdir($projectRoot . '/' . $dir);
+        $fs->touch($projectRoot . '/' . $dir . '/.gitkeep');
+        $event->getIO()->write('Create a ./' . $dir . ' directory for docker development mappings');
+      }
+    }
+
+    $dockerFiles= [
+      '.env',
+      'docker-compose.yml',
+      'Makefile',
+      'docker.mk'
+    ];
+
+    foreach ($dockerFiles as $file) {
+      if(!$fs->exists($projectRoot . '/' . $file)) {
+        $fs->copy($vendorRoot . '/wodby/docker4drupal/' . $file, $projectRoot . '/' . $file);
+        $event->getIO()->write("Create a ". $file . " file for docker development environment initial configuration");
+      }
+    }
+
+    // @todo: there has to be a better way to write intro message...
+    $introMessage = [
+      '  --------------------------------------------------------------------',
+      '',
+      '  <info>Docker implentation by Wodby was successfully added to your project!</info>',
+      '    Releases: https://github.com/wodby/docker4drupal/releases',
+      '    You can read more about it here: https://wodby.com/docs/stacks/drupal/local',
+      '',
+      '  <fg=yellow>We would recommend keep internal docker volumes mapping like this:</>',
+      '    <fg=blue>docker</>',
+      '    <fg=blue>|-- service</>',
+      '    <fg=blue>|   |--directory</>',
+      '    <fg=blue>|-- other_service</>',
+      '    <fg=blue>    |--other_other</>',
+      '',
+      '  <fg=yellow>This would be volumes mapping in <fg=green>docker-compose.yml</>:</>',
+      '    <fg=yellow;options=bold>services:</>',
+      '    <fg=yellow;options=bold>  service:</>',
+      '    <fg=yellow;options=bold>    volumes:</>',
+      '          - ./docker/service/directory:/path/to/directory/in/service',
+      '    <fg=yellow;options=bold>  other_service:</>',
+      '    <fg=yellow;options=bold>    volumes:</>',
+      '          - ./docker/other_service/other_directory:/path/to/directory/in/other_service',
+      '',
+      '  <info>You can start project by running:</info>',
+      '    <fg=yellow>make up</>',
+      '',
+      '  --------------------------------------------------------------------'
+    ];
+
+    $event->getIO()->write($introMessage, true);
+  }
+
   /**
    * Checks if the installed version of Composer is compatible.
    *
