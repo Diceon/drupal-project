@@ -133,6 +133,7 @@ class ScriptHandler {
       '  <info>Prepare project environment configuration</info>',
       '    You can copy relevant <options=bold>Environment configuration (.env)</> files contents to single <fg=yellow>.env</> file or run this script:',
       '    <fg=yellow>cat .env.* >> .env</>',
+      '',
       '  <info>You can start project by running:</info>',
       '    <fg=yellow>make up</>',
       '',
