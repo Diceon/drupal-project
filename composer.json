@@ -51,6 +51,7 @@
         "drupal/realistic_dummy_content": "^2.0",
         "drupal/twig_vardumper": "^1.1",
         "drupal/vardumper": "^1.4",
+        "drupal/whoops": "^1.0@beta",
         "webflo/drupal-core-require-dev": "^8.6.0",
         "wodby/docker4drupal": "master"
     },
