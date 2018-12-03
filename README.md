@@ -20,7 +20,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project drupal-composer/drupal-project:7.x-dev some-dir --stability dev --no-interaction
+composer create-project irmantasp/drupal-project:^7 some-dir --repository-url=https://repository-irmantasp.herokuapp.com --no-interaction
 ```
 
 With `composer require ...` you can download new dependencies to your 
@@ -47,6 +47,7 @@ When installing the given `composer.json` some tasks are taken care of:
 * Helps for using other PHP packages almost similar to the Drupal 8 version
 * Creates default writable versions of `settings.php`.
 * Creates `web/sites/default/files`-directory.
+* Installs Docker development environment by `wodby/docker4drupal` and places initial files inside project.
 * Latest version of drush is installed locally for use at `vendor/bin/drush`.
 
 ## Generate composer.json from existing project
