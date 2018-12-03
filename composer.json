@@ -45,7 +45,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "sort-packages": true
@@ -57,6 +57,9 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
+        "post-create-project-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredDockerFiles"
+        ],
         "pre-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
