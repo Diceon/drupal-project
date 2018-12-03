@@ -98,11 +98,11 @@ class ScriptHandler {
     ];
 
     foreach ($dockerFiles as $file) {
-      $destinationFile = $file !== '.env' ? $file . '.docker4drupal' : $file;
+      $destinationFile = $file === '.env' ? $file . '.docker4drupal' : $file;
 
       if(!$fs->exists($projectRoot . '/' . $destinationFile)) {
         $fs->copy($vendorRoot . '/wodby/docker4drupal/' . $file, $projectRoot . '/' . $destinationFile);
-        $event->getIO()->write("Create a ". $file . " file for docker development environment initial configuration");
+        $event->getIO()->write("Created a ". $destinationFile . " file for docker development environment initial configuration");
       }
     }
 
@@ -131,7 +131,7 @@ class ScriptHandler {
       '          - ./docker/other_service/other_directory:/path/to/directory/in/other_service',
       '',
       '  <info>Prepare project environment configuration</info>',
-      '    You can copy relevant <options=bold>Environment configuration (.env)</> files contents to single <fg=yellow>.env</> file or run this script:',
+      '    You can copy relevant <fg=yellow;>Environment configuration (.env)</> files contents to single <fg=yellow>.env</> file or run this script:',
       '    <fg=yellow>cat .env.* >> .env</>',
       '',
       '  <info>You can start project by running:</info>',
