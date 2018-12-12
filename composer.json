@@ -44,6 +44,8 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+        "drupal/coder": "^8.3",
         "drupal/devel": "^1.2",
         "drupal/devel_debug_log": "^1.0@beta",
         "drupal/examples": "1.x-dev",
