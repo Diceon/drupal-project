@@ -20,7 +20,7 @@
                 "name": "wodby/docker4drupal",
                 "version": "master",
                 "source": {
-                  "url": "https://github.com/irmantas/docker4drupal.git",
+                  "url": "https://github.com/irmantasp/docker4drupal.git",
                   "type": "git",
                   "reference": "master"
                 }
