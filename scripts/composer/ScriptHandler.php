@@ -82,7 +82,7 @@ class ScriptHandler {
     $dockerFiles= [
       '.env',
       'docker-compose.yml',
-      'docker-composer.override.yml',
+      'docker-compose.override.yml',
       'Makefile',
       'docker.mk'
     ];
