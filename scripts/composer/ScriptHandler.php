@@ -68,7 +68,8 @@ class ScriptHandler {
     $vendorRoot = $drupalFinder->getVendorDir();
 
     $dockerDirs = [
-      'docker'
+      'docker',
+      'docker/mariadb/dumps/init',
     ];
 
     foreach ($dockerDirs as $dir) {
