@@ -20,7 +20,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project irmantasp/drupal-project:^8 some-dir --repository-url=https://github.com/drupal-composer/drupal-project --no-interaction
+composer create-project irmantasp/drupal-project:^8 some-dir --repository="{\"url\": \"http://github.com/irmantasp/drupal-project\", \"type\": \"vcs\"}" --no-interaction  --stability=dev --remove-vcs
 ```
 
 With `composer require ...` you can download new dependencies to your
