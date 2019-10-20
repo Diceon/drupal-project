@@ -22,7 +22,7 @@
             "type": "package",
             "package": {
                 "name": "irmantasp/docker4drupal",
-                "version": "drupal-project",
+                "version": "master",
                 "source": {
                   "url": "https://github.com/irmantasp/docker4drupal.git",
                   "type": "git",
@@ -64,7 +64,7 @@
         "drupal/whoops": "^1.0@beta",
         "roave/security-advisories": "dev-master",
         "webflo/drupal-core-require-dev": "^8.7.8",
-        "irmantasp/docker4drupal": "drupal-project"
+        "irmantasp/docker4drupal": "master"
     },
     "conflict": {
         "drupal/drupal": "*"
