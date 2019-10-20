@@ -21,12 +21,12 @@
         {
             "type": "package",
             "package": {
-                "name": "wodby/docker4drupal",
-                "version": "master",
+                "name": "irmantasp/docker4drupal",
+                "version": "1.x-dev",
                 "source": {
                   "url": "https://github.com/irmantasp/docker4drupal.git",
                   "type": "git",
-                  "reference": "master"
+                  "reference": "1.x-dev"
                 }
             }
         }
@@ -64,7 +64,7 @@
         "drupal/whoops": "^1.0@beta",
         "roave/security-advisories": "dev-master",
         "webflo/drupal-core-require-dev": "^8.7.8",
-        "wodby/docker4drupal": "master"
+        "irmantasp/docker4drupal": "1.x-dev"
     },
     "conflict": {
         "drupal/drupal": "*"
