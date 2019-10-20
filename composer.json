@@ -121,6 +121,8 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
-        }
+        },
+        "patches": {},
+        "patches-ignore": {}
     }
 }
