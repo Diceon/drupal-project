@@ -92,7 +92,7 @@ class ScriptHandler {
       $destinationFile = $file === '.env' ? $file . '.docker4drupal' : $file;
 
       if(!$fs->exists($projectRoot . '/' . $destinationFile)) {
-        $fs->copy($vendorRoot . '/wodby/docker4drupal/' . $file, $projectRoot . '/' . $destinationFile);
+        $fs->copy($vendorRoot . '/irmantasp/docker4drupal/' . $file, $projectRoot . '/' . $destinationFile);
         $event->getIO()->write("Created a ". $destinationFile . " file for docker development environment initial configuration");
       }
     }
