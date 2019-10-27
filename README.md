@@ -20,7 +20,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project irmantasp/drupal-project:^8 some-dir --repository="{\"url\": \"http://github.com/irmantasp/drupal-project\", \"type\": \"vcs\"}" --no-interaction  --stability=dev --remove-vcs
+composer create-project irmantasp/drupal-project:^9 some-dir --repository="{\"url\": \"http://github.com/irmantasp/drupal-project\", \"type\": \"vcs\"}" --no-interaction  --stability=dev --remove-vcs
 ```
 
 With `composer require ...` you can download new dependencies to your
@@ -28,7 +28,7 @@ installation.
 
 ```
 cd some-dir
-composer require drupal/devel:~1.0
+composer require drupal/devel
 ```
 
 The `composer create-project` command passes ownership of all files to the
